@@ -2,6 +2,17 @@ module Spree
   module BaseHelper
 
     # Defined because Rails' current_page? helper is not working when Spree is mounted at root.
+    # jet adding helper from 1-1-stable
+
+    def order_subtotal(order, options={})
+      options.assert_valid_keys(:format_as_currency, :show_vat_text)
+      options.reverse_merge! :format_as_currency => true, :show_vat_text => true
+
+      amount =  order.total
+
+      options.delete(:format_as_currency) ? number_to_currency(amount) : amount
+    end
+
     def current_spree_page?(url)
       path = request.fullpath.gsub(/^\/\//, '/')
       if url.is_a?(String)
