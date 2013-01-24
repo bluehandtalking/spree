@@ -28,7 +28,7 @@ module Spree
 	end
        line_items_total = matched_line_items.sum(&:total) 
        adjusted_total = line_items_total + order.promotions_total
-       order.line_items.empty? ? 0 : 0.0
+       order.line_items.empty? ? 0 : adjusted_total * rate.amount
      end
 
       def compute_line_item(line_item)
