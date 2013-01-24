@@ -92,6 +92,10 @@ module Spree
           where(:originator_type => 'Spree::ShippingMethod')
         end
 
+	def promotion
+	   where(:originator_type => 'Spree::PromotionAction')
+	end
+
         def optional
           where(:mandatory => false)
         end
