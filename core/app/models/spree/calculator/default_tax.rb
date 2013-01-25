@@ -23,14 +23,13 @@ module Spree
       end
 
      def compute_order(order)
-	matched_line_items = order.line_items.select do |line_item|
-	     line_item.product.tax_category == rate.tax_category
-	end
-       line_items_total = matched_line_items.sum(&:total) 
-       adjusted_total = line_items_total + order.promotions_total
-       puts "The total of promotions in default_tax: #{ order.promotions_total }"
-       order.line_items.empty? ? 0 : adjusted_total * rate.amount
-     end
+        matched_line_items = order.line_items.select do |line_item|
+          line_item.product.tax_category == rate.tax_category
+        end
+
+        line_items_total = matched_line_items.sum(&:total)
+        round_to_two_places(line_items_total * rate.amount)
+     end 
 
       def compute_line_item(line_item)
         if line_item.product.tax_category == rate.tax_category

@@ -539,11 +539,6 @@ module Spree
       end
     end
 
-      def promotions_total
-	(order.adjustments.eligible - order.adjustments.tax - order.adjustments.shipping).map(&:amount).sum
-      end 
-
-
     private
       def link_by_email
         self.email = user.email if self.user
