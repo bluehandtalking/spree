@@ -42,7 +42,7 @@ $color-error:                 $color-5 !default;
 
 // Table colors
 $color-tbl-odd:               $color-1 !default;
-$color-tbl-even:              $color-3 !default;
+$color-tbl-even:              very-light($color-3) !default;
 
 $color-tbl-thead:             very-light($color-3) !default;
 /*$color-tbl-thead:             $color-3 !default;*/
