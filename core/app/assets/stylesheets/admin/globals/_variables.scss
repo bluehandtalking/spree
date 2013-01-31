@@ -10,10 +10,17 @@ $base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 //--------------------------------------------------------------
 
 // Basic color palette for admin
-$color-1:                     #FFFFFF !default;    // White
+/*$color-1:                     #FFFFFF !default;    // White*/
+$color-1:                     #ACCEFB !default;    
+
 $color-2:                     #9FC820 !default;    // Green
-$color-3:                     #5FA5E8 !default;    // Light Blue
-$color-4:                     #6788A2 !default;    // Dark Blue
+
+/*$color-3:                     #5FA5E8 !default;    // Light Blue*/
+$color-3:                     #8FBDFA !default;    // Light Blue
+
+/*$color-4:                     #6788A2 !default;    // Dark Blue*/
+$color-4:                     #020320 !default;    
+
 $color-5:                     #C60F13 !default;    // Red
 $color-6:                     #FF9300 !default;    // Yellow
 
@@ -35,8 +42,10 @@ $color-error:                 $color-5 !default;
 
 // Table colors
 $color-tbl-odd:               $color-1 !default;
-$color-tbl-even:              very-light($color-3) !default;
-$color-tbl-thead:             very-light($color-3) !default;
+$color-tbl-even:              $color-3 !default;
+/*$color-tbl-thead:             very-light($color-3) !default;*/
+$color-tbl-thead:             $color-3 !default;
+
 
 // Button colors
 $color-btn-bg:                $color-3 !default;
