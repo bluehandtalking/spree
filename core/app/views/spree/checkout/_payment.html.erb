@@ -24,9 +24,16 @@
   </div>
 </fieldset>
 
+
 <br class="space" />
 
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
   <script>disableSaveOnClick();</script>
+  <%# jet  change cart content %>
+
+   <div id="change_cart_content_payment" >
+      <%= link_to "Change Cart Content", "/cart", :class => 'change-button-ace' %>
+   </div>
+ 
 </div>
