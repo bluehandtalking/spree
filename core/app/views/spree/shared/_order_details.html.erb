@@ -4,14 +4,42 @@
     <div class="columns alpha four">
       <h6><%= t(:shipping_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
       <div class="address">
-        <%= order.ship_address %>
+	 <table>
+	    <tr>
+	       <td><%= order.ship_address.firstname %>, <%= order.ship_address.lastname %></td>
+	    </tr>
+	    <tr>
+	       <td><%= order.ship_address.address1 %></td>
+	    </tr>    
+	    <tr>
+	       <td><%= order.ship_address.address2 %></td>
+	    </tr>    
+	    <tr>
+	       <td><%= order.ship_address.city %></td><td>, <%= order.ship_address.city %></td><td><%= order.ship_address.zipcode %></td> 
+	    </tr> 
+	</table>   
+	  
       </div>
     </div>
 
     <div class="columns alpha four">
       <h6><%= t(:billing_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
       <div class="address">
-        <%= order.bill_address %>
+	 <table>
+	    <tr>
+	       <td><%= order.bill_address.firstname %>, <%= order.bill_address.lastname %></td>
+	    </tr>
+	    <tr>
+	       <td><%= order.bill_address.address1 %></td>
+	    </tr>    
+	    <tr>
+	       <td><%= order.bill_address.address2 %></td>
+	    </tr>    
+	    <tr>
+	       <td><%= order.bill_address.city %></td><td>, <%= order.bill_address.city %></td><td><%= order.bill_address.zipcode %></td> 
+	    </tr> 
+	</table>   
+	   
       </div>
     </div>
 
@@ -119,3 +147,4 @@
     <% end %>
   </tfoot>
 </table>
+
