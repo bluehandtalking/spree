@@ -116,7 +116,7 @@
 
     <%= f.field_container :option_types do %>
       <%= f.label :option_type_ids, t(:option_types) %>
-      <%= f.select :option_type_ids, option_types_options_for(@product), {}, :class => "select2", :multiple => true %>
+      <%= f.select :option_type_ids, option_types_options_for(@product), {}, :multiple => true %>
     <% end %>
   </div>
 
