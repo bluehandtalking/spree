@@ -543,7 +543,7 @@ module Spree
       promotions = adjustments.eligible.select do |adjustment|
 	 adjustment.originator_type == "Spree::PromotionAction"  
       end
-      promotions.map(&:amount).sum 
+      total = promotions.map(&:amount).sum 
     end
 
 
