@@ -57,14 +57,6 @@ describe Spree::Payment do
 
   end
 
-  context 'invalidate' do
-    it 'should transition from checkout to invalid' do
-      payment.state = 'checkout'
-      payment.invalidate
-      payment.state.should eq('invalid')
-    end
-  end 
-
   context "processing" do
     before do
       payment.stub(:update_order)
@@ -76,12 +68,6 @@ describe Spree::Payment do
         payment.payment_method.should_receive(:auto_capture?).and_return(true)
         payment.should_receive(:purchase!)
         payment.process!
-      end
-
-      it "should invalidate if payment method doesnt support source" do
-        payment.payment_method.should_receive(:supports?).with(payment.source).and_return(false)
-        lambda { payment.process!}.should raise_error(Spree::Core::GatewayError)
-        payment.state.should eq('invalid')
       end
 
       it "should authorize without auto_capture" do

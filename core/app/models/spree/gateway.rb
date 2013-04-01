@@ -44,11 +44,5 @@ module Spree
     def method_type
       'gateway'
     end
-
-    def supports?(source)
-      return true unless provider_class.respond_to? :supports?
-      return false unless source.brand
-      provider_class.supports?(source.brand)
-    end  
   end
 end
