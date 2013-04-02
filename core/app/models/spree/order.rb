@@ -164,7 +164,8 @@ module Spree
 
     # If true, causes the confirmation step to happen during the checkout process
     def confirmation_required?
-      payment_method && payment_method.payment_profiles_supported?
+      # jet remove this:  payment_method && payment_method.payment_profiles_supported? 
+	false 
     end
 
     # Indicates the number of items in the order
