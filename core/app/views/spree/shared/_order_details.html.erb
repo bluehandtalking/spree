@@ -15,7 +15,7 @@
 	       <td><%= order.ship_address.address2 %></td>
 	    </tr>    
 	    <tr>
-	       <td><%= order.ship_address.city %></td><td>, <%= order.ship_address.city %></td><td><%= order.ship_address.zipcode %></td> 
+	       <td><%= order.ship_address.city %></td><td>, <%= order.ship_address.state_text %></td><td><%= order.ship_address.zipcode %></td> 
 	    </tr> 
 	</table>   
 	  
@@ -36,7 +36,7 @@
 	       <td><%= order.bill_address.address2 %></td>
 	    </tr>    
 	    <tr>
-	       <td><%= order.bill_address.city %></td><td>, <%= order.bill_address.city %></td><td><%= order.bill_address.zipcode %></td> 
+	       <td><%= order.bill_address.city %></td><td>, <%= order.bill_address.state_text %></td><td><%= order.bill_address.zipcode %></td> 
 	    </tr> 
 	</table>   
 	   
