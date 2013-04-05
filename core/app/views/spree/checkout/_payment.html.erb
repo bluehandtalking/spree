@@ -1,5 +1,6 @@
 <fieldset id="payment" data-hook>
   <legend align="center"><%= t(:payment_information) %></legend>
+  <%= flash_messages %> 
   <div data-hook="checkout_payment_step">
     <% @order.available_payment_methods.each do |method| %>
     <p>
